@@ -1,37 +1,203 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0b0b12"><meta name="description" content="ANOMCLIP — turn long videos into short-form moments.">
-<title>ANOMCLIP — AI Video Studio</title><link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0a10">
+  <meta name="description" content="ANOMCLIP — Your personal AI video clipping studio.">
+  <title>ANOMCLIP — Video Studio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="app-shell">
-<aside class="sidebar">
-  <a class="brand" href="#"><span class="brand-mark">A</span><span>ANOM<span class="violet">CLIP</span><small>VIDEO INTELLIGENCE STUDIO</small></span></a>
-  <div class="nav-label">WORKSPACE</div>
-  <a class="nav active" href="#"><span>▦</span> Overview</a>
-  <a class="nav" href="#create"><span>＋</span> Create clips</a>
-  <a class="nav" href="#projects"><span>▤</span> My projects</a>
-  <div class="nav-label">PREFERENCES</div>
-  <a class="nav" href="#settings"><span>⚙</span> Settings</a>
-  <div class="side-bottom"><div class="avatar">A</div><div><b>Personal workspace</b><small>Free starter</small></div><span class="dot"></span></div>
-</aside>
-<main class="main">
-<header class="topbar"><div><span class="eyebrow">YOUR CREATIVE WORKSPACE</span><h1>Good things start with a clip.</h1></div><div class="top-right"><span class="status"><i></i> SYSTEM READY</span><div class="avatar">A</div></div></header>
-<section class="hero">
-  <div class="hero-copy"><span class="pill"><span class="spark">✦</span> AI VIDEO WORKFLOW</span><h2>Turn long videos<br>into <em>great moments.</em></h2><p>Bring your footage. ANOMCLIP will help turn the best moments into short-form content.</p><a class="primary" href="#create">＋ Start a project</a></div>
-  <div class="hero-art"><div class="orbit o1"></div><div class="orbit o2"></div><div class="play-card"><div class="play-icon">▶</div><span>LONG VIDEO</span><b>→</b><strong>SHORTS</strong></div><div class="floating f1">✦ Smart highlights</div><div class="floating f2">▤ Auto captions</div></div>
-</section>
-<section class="section" id="create"><div class="section-head"><div><span class="eyebrow">LET'S MAKE SOMETHING</span><h2>Create a new project</h2></div><span class="step">01 / INPUT</span></div>
-<div class="create-grid">
-  <div class="panel upload-panel"><div class="panel-icon">↥</div><h3>Upload a video</h3><p>Choose a video from your device to start a project.</p><label class="upload-button" for="videoFile">Choose video</label><input id="videoFile" type="file" accept="video/*" hidden><div class="file-name" id="fileName">MP4 · MOV · WEBM</div><video id="videoPreview" controls playsinline hidden></video></div>
-  <div class="panel url-panel"><div class="panel-icon">↗</div><h3>Import from a link</h3><p>Paste a video URL you own or have permission to use.</p><label class="field-label" for="videoUrl">VIDEO URL</label><input id="videoUrl" type="url" placeholder="https://www.youtube.com/watch?v=..."><button class="secondary" id="saveUrl">Use this link <span>→</span></button><div class="file-name" id="urlStatus">Link import adapter not connected yet</div></div>
+
+<div class="app">
+
+  <!-- Desktop sidebar -->
+  <aside class="sidebar">
+    <a class="brand" href="#home">
+      <span class="brand-icon">A</span>
+      <span>ANOM<span class="purple">CLIP</span>
+        <small>VIDEO STUDIO</small>
+      </span>
+    </a>
+
+    <div class="nav-heading">WORKSPACE</div>
+    <a class="side-link active" href="#home">⌂ <span>Home</span></a>
+    <a class="side-link" href="#create">＋ <span>Create clips</span></a>
+    <a class="side-link" href="#projects">▤ <span>My projects</span></a>
+
+    <div class="nav-heading">PREFERENCES</div>
+    <a class="side-link" href="#settings">⚙ <span>Settings</span></a>
+
+    <div class="profile">
+      <div class="avatar">A</div>
+      <div>
+        <b>Personal studio</b>
+        <small>Free workspace</small>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main content -->
+  <main class="main" id="home">
+
+    <header class="topbar">
+      <div class="mobile-brand">
+        <span class="brand-icon">A</span>
+        <b>ANOM<span class="purple">CLIP</span></b>
+      </div>
+      <div class="welcome">
+        <span class="eyebrow">YOUR CREATIVE WORKSPACE</span>
+        <h1>Welcome to your studio.</h1>
+      </div>
+      <div class="avatar">A</div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-content">
+        <span class="eyebrow violet-text">✦ YOUR AI VIDEO STUDIO</span>
+        <h2>Make every<br>moment <span>count.</span></h2>
+        <p>
+          Transform long videos into engaging short-form content.
+          Your creative workflow starts here.
+        </p>
+        <a class="primary-btn" href="#create">＋ Start creating</a>
+      </div>
+      <div class="hero-decoration">
+        <div class="hero-orbit"></div>
+        <div class="hero-orbit second"></div>
+        <div class="hero-symbol">A</div>
+      </div>
+      <div class="hero-footer">
+        <span>ANOMCLIP STUDIO</span>
+        <span>01 — CREATE</span>
+      </div>
+    </section>
+
+    <!-- Create -->
+    <section class="section" id="create">
+      <div class="section-title">
+        <div>
+          <span class="eyebrow">GET STARTED</span>
+          <h2>Create a project</h2>
+          <p>Choose your source video to begin.</p>
+        </div>
+        <span class="section-number">01 / 03</span>
+      </div>
+
+      <div class="create-grid">
+
+        <div class="upload-card">
+          <div class="card-icon">↥</div>
+          <h3>Upload a video</h3>
+          <p>Select a video from your phone or computer.</p>
+
+          <label class="upload-btn" for="videoFile">
+            Choose video <span>＋</span>
+          </label>
+          <input type="file" id="videoFile" accept="video/*" hidden>
+
+          <div id="fileName" class="file-info">
+            MP4 · MOV · WEBM
+          </div>
+
+          <div id="previewContainer" class="preview-container" hidden>
+            <video id="videoPreview" controls playsinline></video>
+            <div id="videoDetails" class="video-details"></div>
+          </div>
+        </div>
+
+        <div class="upload-card link-card">
+          <div class="card-icon">↗</div>
+          <h3>Import from a link</h3>
+          <p>Paste a supported video URL.</p>
+
+          <label class="field-label" for="videoUrl">VIDEO URL</label>
+          <input
+            id="videoUrl"
+            type="url"
+            placeholder="Paste your YouTube link..."
+          >
+
+          <button id="saveUrl" class="secondary-btn">
+            Add video link <span>→</span>
+          </button>
+
+          <div id="urlStatus" class="file-info">
+            Link processing will be added in Phase 2.
+          </div>
+        </div>
+
+      </div>
+
+      <div class="info-note">
+        <span>ⓘ</span>
+        <div>
+          <b>ANOMCLIP Preview</b>
+          <p>
+            Video preview works locally in your browser.
+            AI processing and cloud upload are coming in future phases.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects">
+      <div class="section-title">
+        <div>
+          <span class="eyebrow">YOUR LIBRARY</span>
+          <h2>Recent projects</h2>
+        </div>
+        <span class="section-number" id="projectCount">0 PROJECTS</span>
+      </div>
+
+      <div id="emptyState" class="empty-state">
+        <div class="empty-icon">▤</div>
+        <h3>No projects yet</h3>
+        <p>Your videos will appear here once added.</p>
+        <a href="#create">Create your first project →</a>
+      </div>
+
+      <div id="projectList" class="project-list"></div>
+    </section>
+
+    <!-- Settings placeholder -->
+    <section class="section settings-section" id="settings">
+      <span class="eyebrow">PREFERENCES</span>
+      <h2>Your studio settings</h2>
+      <p>More customization options are coming soon.</p>
+    </section>
+
+    <footer>
+      <b>ANOM<span class="purple">CLIP</span></b>
+      <span>Made for creators.</span>
+      <span>VERSION 2.0</span>
+    </footer>
+
+  </main>
 </div>
-<div class="notice"><span>ⓘ</span><div><b>Phase 1 preview</b><p>Project inputs are handled in this browser only. Cloud upload and AI processing will be connected in later phases.</p></div></div>
-</section>
-<section class="section" id="projects"><div class="section-head"><div><span class="eyebrow">YOUR LIBRARY</span><h2>Recent projects</h2></div><span class="count" id="projectCount">0 PROJECTS</span></div><div class="empty" id="emptyState"><div class="empty-icon">▧</div><b>Your next great clip starts here</b><p>Choose a video or add a link to create your first project.</p></div><div class="project-list" id="projectList"></div></section>
-<footer>ANOMCLIP <span>PHASE 1 · FOUNDATION</span><span>Made for creators.</span></footer>
-</main></div>
-<div class="toast" id="toast"></div><script src="app.js"></script>
-</body></html>
+
+<!-- Mobile navigation -->
+<nav class="bottom-nav">
+  <a class="bottom-link active" href="#home">
+    <span>⌂</span><small>Home</small>
+  </a>
+  <a class="bottom-link" href="#create">
+    <span>＋</span><small>Create</small>
+  </a>
+  <a class="bottom-link" href="#projects">
+    <span>▤</span><small>Projects</small>
+  </a>
+  <a class="bottom-link" href="#settings">
+    <span>⚙</span><small>Settings</small>
+  </a>
+</nav>
+
+<div id="toast" class="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
